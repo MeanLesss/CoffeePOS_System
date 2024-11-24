@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FA298FC-74C5-438C-A1EE-FF18C9A0E5D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CoffeePOS_System</RootNamespace>
+    <AssemblyName>CoffeePOS_System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.3.1.1\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\OrderItemCard_Component.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\OrderItemCard_Component.Designer.cs">
+      <DependentUpon>OrderItemCard_Component.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\OrderItemListItem_Component.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\OrderItemListItem_Component.Designer.cs">
+      <DependentUpon>OrderItemListItem_Component.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB Context\Coffee_POS.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_POS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalCustomizeFuction.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategorySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\CategorySetting.Designer.cs">
+      <DependentUpon>CategorySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DrinkSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\DrinkSettings.Designer.cs">
+      <DependentUpon>DrinkSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FoodSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FoodSetting.Designer.cs">
+      <DependentUpon>FoodSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PopUpMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PopUpMenu.Designer.cs">
+      <DependentUpon>PopUpMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserSettings.Designer.cs">
+      <DependentUpon>UserSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="DB Context\Coffee_POS.dbml.layout">
+      <DependentUpon>Coffee_POS.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Components\OrderItemCard_Component.resx">
+      <DependentUpon>OrderItemCard_Component.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\OrderItemListItem_Component.resx">
+      <DependentUpon>OrderItemListItem_Component.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CategorySetting.resx">
+      <DependentUpon>CategorySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DrinkSettings.resx">
+      <DependentUpon>DrinkSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FoodSetting.resx">
+      <DependentUpon>FoodSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PopUpMenu.resx">
+      <DependentUpon>PopUpMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DB Context\Coffee_POS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Coffee_POS.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Components.OrderItemCard_Component.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Components.OrderItemListItem_Component.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.DB_Context.Category.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.DB_Context.Coffee_POSDataContext.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.DB_Context.Order.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.DB_Context.Product.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.DB_Context.User.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.CategorySetting.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.Dashboard.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.DrinkSettings.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.FoodSetting.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.LoginForm.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.PopUpMenu.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Pages.UserSettings.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\CoffeePOS_System.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\GlobalCustomizeFuction.datasource" />
+    <None Include="Properties\DataSources\MainMenu.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AppAssets\login-bg.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
