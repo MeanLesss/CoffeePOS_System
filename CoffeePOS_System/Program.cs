@@ -18,8 +18,8 @@ namespace CoffeePOS_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DrinkSettings());
-            //Application.Run(new LoginForm());
-            Application.Run(new MainMenu());
+            Application.Run(new LoginForm());
+            //Application.Run(new MainMenu());
             //Application.Run(new Dashboard());
         }
     }

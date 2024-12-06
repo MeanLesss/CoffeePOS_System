@@ -43,18 +43,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
+            this.iconButtonPay = new FontAwesome.Sharp.IconButton();
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelTax = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelSubTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanelOrdered = new System.Windows.Forms.FlowLayoutPanel();
             this.iconDropDownButton1 = new FontAwesome.Sharp.IconDropDownButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelSubTotal = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelTax = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelTotal = new System.Windows.Forms.Label();
-            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
-            this.iconButtonPay = new FontAwesome.Sharp.IconButton();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).BeginInit();
@@ -66,7 +66,7 @@
             // 
             // panel_top
             // 
-            this.panel_top.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel_top.BackColor = System.Drawing.Color.FloralWhite;
             this.panel_top.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_top.Controls.Add(this.comboBoxCategory);
             this.panel_top.Controls.Add(this.label3);
@@ -155,7 +155,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FloralWhite;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panelTotal);
             this.panel1.Controls.Add(this.flowLayoutPanelOrdered);
@@ -213,6 +213,110 @@
             this.panelTotal.Size = new System.Drawing.Size(585, 189);
             this.panelTotal.TabIndex = 1;
             // 
+            // iconButtonPay
+            // 
+            this.iconButtonPay.BackColor = System.Drawing.Color.PaleGreen;
+            this.iconButtonPay.FlatAppearance.BorderSize = 0;
+            this.iconButtonPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonPay.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
+            this.iconButtonPay.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButtonPay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonPay.Location = new System.Drawing.Point(372, 124);
+            this.iconButtonPay.Name = "iconButtonPay";
+            this.iconButtonPay.Size = new System.Drawing.Size(137, 47);
+            this.iconButtonPay.TabIndex = 1;
+            this.iconButtonPay.Text = "Pay Now";
+            this.iconButtonPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonPay.UseVisualStyleBackColor = false;
+            this.iconButtonPay.Click += new System.EventHandler(this.iconButtonPay_Click);
+            // 
+            // iconButtonCancel
+            // 
+            this.iconButtonCancel.BackColor = System.Drawing.Color.Salmon;
+            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
+            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            this.iconButtonCancel.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCancel.Location = new System.Drawing.Point(32, 124);
+            this.iconButtonCancel.Name = "iconButtonCancel";
+            this.iconButtonCancel.Size = new System.Drawing.Size(137, 47);
+            this.iconButtonCancel.TabIndex = 1;
+            this.iconButtonCancel.Text = "Cancel";
+            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelTotal.Location = new System.Drawing.Point(433, 72);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(76, 29);
+            this.labelTotal.TabIndex = 0;
+            this.labelTotal.Text = "$0.00";
+            this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(28, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Total";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTax
+            // 
+            this.labelTax.AutoSize = true;
+            this.labelTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTax.Location = new System.Drawing.Point(454, 41);
+            this.labelTax.Name = "labelTax";
+            this.labelTax.Size = new System.Drawing.Size(55, 24);
+            this.labelTax.TabIndex = 0;
+            this.labelTax.Text = "$0.00";
+            this.labelTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(28, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 24);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "VAT(10%)";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelSubTotal
+            // 
+            this.labelSubTotal.AutoSize = true;
+            this.labelSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSubTotal.Location = new System.Drawing.Point(454, 13);
+            this.labelSubTotal.Name = "labelSubTotal";
+            this.labelSubTotal.Size = new System.Drawing.Size(55, 24);
+            this.labelSubTotal.TabIndex = 0;
+            this.labelSubTotal.Text = "$0.00";
+            this.labelSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Sub Total";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // flowLayoutPanelOrdered
             // 
             this.flowLayoutPanelOrdered.AutoScroll = true;
@@ -241,110 +345,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 738);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 24);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Sub Total";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelSubTotal
-            // 
-            this.labelSubTotal.AutoSize = true;
-            this.labelSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubTotal.Location = new System.Drawing.Point(454, 13);
-            this.labelSubTotal.Name = "labelSubTotal";
-            this.labelSubTotal.Size = new System.Drawing.Size(55, 24);
-            this.labelSubTotal.TabIndex = 0;
-            this.labelSubTotal.Text = "$0.00";
-            this.labelSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 24);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "VAT(10%)";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelTax
-            // 
-            this.labelTax.AutoSize = true;
-            this.labelTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTax.Location = new System.Drawing.Point(454, 41);
-            this.labelTax.Name = "labelTax";
-            this.labelTax.Size = new System.Drawing.Size(55, 24);
-            this.labelTax.TabIndex = 0;
-            this.labelTax.Text = "$0.00";
-            this.labelTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(28, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 29);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Total";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelTotal.Location = new System.Drawing.Point(433, 72);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(76, 29);
-            this.labelTotal.TabIndex = 0;
-            this.labelTotal.Text = "$0.00";
-            this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // iconButtonCancel
-            // 
-            this.iconButtonCancel.BackColor = System.Drawing.Color.Salmon;
-            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
-            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.iconButtonCancel.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonCancel.Location = new System.Drawing.Point(32, 124);
-            this.iconButtonCancel.Name = "iconButtonCancel";
-            this.iconButtonCancel.Size = new System.Drawing.Size(137, 47);
-            this.iconButtonCancel.TabIndex = 1;
-            this.iconButtonCancel.Text = "Cancel";
-            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonCancel.UseVisualStyleBackColor = false;
-            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
-            // 
-            // iconButtonPay
-            // 
-            this.iconButtonPay.BackColor = System.Drawing.Color.PaleGreen;
-            this.iconButtonPay.FlatAppearance.BorderSize = 0;
-            this.iconButtonPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonPay.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
-            this.iconButtonPay.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButtonPay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonPay.Location = new System.Drawing.Point(372, 124);
-            this.iconButtonPay.Name = "iconButtonPay";
-            this.iconButtonPay.Size = new System.Drawing.Size(137, 47);
-            this.iconButtonPay.TabIndex = 1;
-            this.iconButtonPay.Text = "Pay Now";
-            this.iconButtonPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonPay.UseVisualStyleBackColor = false;
-            this.iconButtonPay.Click += new System.EventHandler(this.iconButtonPay_Click);
             // 
             // MainMenu
             // 

@@ -110,14 +110,14 @@ namespace CoffeePOS_System
 
                 if (foundCard != null)
                 {
-                    foundCard.UpdateOrder(order);
-                    UpdateOrderListUI();
+                    foundCard.UpdateOrder(order); 
                 }
                 else
                 {
                     // Optionally handle the case where the card was not found
                     Debug.WriteLine("Order item card not found for product: " + order.Product.Guid);
                 }
+                UpdateOrderListUI();
 
             }
             catch (Exception ex)
@@ -150,7 +150,7 @@ namespace CoffeePOS_System
                     if (order.Qty <= 0)
                     {
                         //orders.Remove(existingOrder); 
-                        orders.Clear();
+                        //orders.Clear();
                         ResetOrder();
                     }
                     else
@@ -165,14 +165,14 @@ namespace CoffeePOS_System
 
                     if (foundCard != null)
                     {
-                        foundCard.UpdateOrder(order);
-                        UpdateOrderListUI();
+                        foundCard.UpdateOrder(order); 
                     }
                     else
                     {
                         // Handle case where the card was not found
                         Debug.WriteLine("Order item card not found for product: " + order.Product.Guid);
                     }
+                    UpdateOrderListUI();
                 }
                
 
@@ -188,10 +188,7 @@ namespace CoffeePOS_System
                 GC.WaitForPendingFinalizers();
             }
         }
-
-
-
-
+         
         private void UpdateOrderListUI()
         {
             // Clear previous items in the panel to avoid duplicates
