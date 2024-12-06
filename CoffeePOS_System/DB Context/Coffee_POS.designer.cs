@@ -39,6 +39,9 @@ namespace CoffeePOS_System.DB_Context
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertInvoice(Invoice instance);
+    partial void UpdateInvoice(Invoice instance);
+    partial void DeleteInvoice(Invoice instance);
     #endregion
 		
 		public Coffee_POSDataContext() : 
@@ -100,6 +103,14 @@ namespace CoffeePOS_System.DB_Context
 			get
 			{
 				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Invoice> Invoices
+		{
+			get
+			{
+				return this.GetTable<Invoice>();
 			}
 		}
 	}
@@ -435,6 +446,10 @@ namespace CoffeePOS_System.DB_Context
 		
 		private string _OrderByCode;
 		
+		private string _InvoiceNo;
+		
+		private System.Guid _InvoiceGuid;
+		
 		private EntityRef<Product> _Product;
 		
     #region Extensibility Method Definitions
@@ -469,6 +484,10 @@ namespace CoffeePOS_System.DB_Context
     partial void OnStatusChanged();
     partial void OnOrderByCodeChanging(string value);
     partial void OnOrderByCodeChanged();
+    partial void OnInvoiceNoChanging(string value);
+    partial void OnInvoiceNoChanged();
+    partial void OnInvoiceGuidChanging(System.Guid value);
+    partial void OnInvoiceGuidChanged();
     #endregion
 		
 		public Order()
@@ -757,6 +776,46 @@ namespace CoffeePOS_System.DB_Context
 					this._OrderByCode = value;
 					this.SendPropertyChanged("OrderByCode");
 					this.OnOrderByCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", CanBeNull=false)]
+		public string InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this.OnInvoiceNoChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceNo = value;
+					this.SendPropertyChanged("InvoiceNo");
+					this.OnInvoiceNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceGuid")]
+		public System.Guid InvoiceGuid
+		{
+			get
+			{
+				return this._InvoiceGuid;
+			}
+			set
+			{
+				if ((this._InvoiceGuid != value))
+				{
+					this.OnInvoiceGuidChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceGuid = value;
+					this.SendPropertyChanged("InvoiceGuid");
+					this.OnInvoiceGuidChanged();
 				}
 			}
 		}
@@ -1184,6 +1243,284 @@ namespace CoffeePOS_System.DB_Context
 		{
 			this.SendPropertyChanging();
 			entity.Product = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Invoice")]
+	public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _Id;
+		
+		private System.Guid _Guid;
+		
+		private string _InvoiceNo;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _PaidBy;
+		
+		private System.Nullable<int> _Status;
+		
+		private string _OrderByCode;
+		
+		private System.Nullable<decimal> _ChangeAmount;
+		
+		private System.Nullable<decimal> _PaidAmount;
+		
+		private System.Nullable<System.DateTime> _PaidDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
+    partial void OnGuidChanging(System.Guid value);
+    partial void OnGuidChanged();
+    partial void OnInvoiceNoChanging(string value);
+    partial void OnInvoiceNoChanged();
+    partial void OnTotalChanging(System.Nullable<decimal> value);
+    partial void OnTotalChanged();
+    partial void OnPaidByChanging(string value);
+    partial void OnPaidByChanged();
+    partial void OnStatusChanging(System.Nullable<int> value);
+    partial void OnStatusChanged();
+    partial void OnOrderByCodeChanging(string value);
+    partial void OnOrderByCodeChanged();
+    partial void OnChangeAmountChanging(System.Nullable<decimal> value);
+    partial void OnChangeAmountChanged();
+    partial void OnPaidAmountChanging(System.Nullable<decimal> value);
+    partial void OnPaidAmountChanged();
+    partial void OnPaidDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnPaidDateChanged();
+    #endregion
+		
+		public Invoice()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Guid", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
+		public System.Guid Guid
+		{
+			get
+			{
+				return this._Guid;
+			}
+			set
+			{
+				if ((this._Guid != value))
+				{
+					this.OnGuidChanging(value);
+					this.SendPropertyChanging();
+					this._Guid = value;
+					this.SendPropertyChanged("Guid");
+					this.OnGuidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NChar(10)")]
+		public string InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this.OnInvoiceNoChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceNo = value;
+					this.SendPropertyChanged("InvoiceNo");
+					this.OnInvoiceNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidBy", DbType="NVarChar(50)")]
+		public string PaidBy
+		{
+			get
+			{
+				return this._PaidBy;
+			}
+			set
+			{
+				if ((this._PaidBy != value))
+				{
+					this.OnPaidByChanging(value);
+					this.SendPropertyChanging();
+					this._PaidBy = value;
+					this.SendPropertyChanged("PaidBy");
+					this.OnPaidByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
+		public System.Nullable<int> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderByCode", DbType="NVarChar(50)")]
+		public string OrderByCode
+		{
+			get
+			{
+				return this._OrderByCode;
+			}
+			set
+			{
+				if ((this._OrderByCode != value))
+				{
+					this.OnOrderByCodeChanging(value);
+					this.SendPropertyChanging();
+					this._OrderByCode = value;
+					this.SendPropertyChanged("OrderByCode");
+					this.OnOrderByCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChangeAmount", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> ChangeAmount
+		{
+			get
+			{
+				return this._ChangeAmount;
+			}
+			set
+			{
+				if ((this._ChangeAmount != value))
+				{
+					this.OnChangeAmountChanging(value);
+					this.SendPropertyChanging();
+					this._ChangeAmount = value;
+					this.SendPropertyChanged("ChangeAmount");
+					this.OnChangeAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidAmount", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> PaidAmount
+		{
+			get
+			{
+				return this._PaidAmount;
+			}
+			set
+			{
+				if ((this._PaidAmount != value))
+				{
+					this.OnPaidAmountChanging(value);
+					this.SendPropertyChanging();
+					this._PaidAmount = value;
+					this.SendPropertyChanged("PaidAmount");
+					this.OnPaidAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PaidDate
+		{
+			get
+			{
+				return this._PaidDate;
+			}
+			set
+			{
+				if ((this._PaidDate != value))
+				{
+					this.OnPaidDateChanging(value);
+					this.SendPropertyChanging();
+					this._PaidDate = value;
+					this.SendPropertyChanged("PaidDate");
+					this.OnPaidDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

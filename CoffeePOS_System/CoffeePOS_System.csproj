@@ -79,6 +79,9 @@
     <Compile Include="Components\OrderItemListItem_Component.Designer.cs">
       <DependentUpon>OrderItemListItem_Component.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB Context\Coffee_POS.cs">
+      <DependentUpon>Coffee_POS.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DB Context\Coffee_POS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

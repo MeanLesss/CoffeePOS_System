@@ -69,7 +69,7 @@ namespace CoffeePOS_System.Components
             _totalItemCount++;
             textBoxQty.Text = _totalItemCount.ToString();
             _order .Qty = _totalItemCount; 
-            this._updateProductOrder( _order);
+            this._updateProductOrder(_order);
         }
         private void textBoxCount_TextChanged(object sender, EventArgs e)
         {

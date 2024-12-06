@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq; 
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace CoffeePOS_System
 {
@@ -83,6 +84,10 @@ namespace CoffeePOS_System
         {
             try
             {
+                if(order.Qty == 0)
+                {
+                    return;
+                }
                 if (!orders.Contains(order))
                 {
                     orders.Add(order);
@@ -106,6 +111,7 @@ namespace CoffeePOS_System
                 if (foundCard != null)
                 {
                     foundCard.UpdateOrder(order);
+                    UpdateOrderListUI();
                 }
                 else
                 {
@@ -113,7 +119,6 @@ namespace CoffeePOS_System
                     Debug.WriteLine("Order item card not found for product: " + order.Product.Guid);
                 }
 
-                UpdateOrderListUI();
             }
             catch (Exception ex)
             {
@@ -161,6 +166,7 @@ namespace CoffeePOS_System
                     if (foundCard != null)
                     {
                         foundCard.UpdateOrder(order);
+                        UpdateOrderListUI();
                     }
                     else
                     {
@@ -170,7 +176,7 @@ namespace CoffeePOS_System
                 }
                
 
-                UpdateOrderListUI();
+                
             }
             catch (Exception ex)
             {
@@ -297,7 +303,10 @@ namespace CoffeePOS_System
             // Add products to the productCards collection
             foreach (var item in products)
             {
-                var order = new Order() { Qty = 0, Product = item,Price = item.Price };
+                var order = new Order() { 
+                    Qty = 0,
+                    Product = item,Price = item.Price 
+                };
                 productCards.Add(order);
             }
             UpdateProductLsit();
@@ -354,6 +363,31 @@ namespace CoffeePOS_System
 
         private void iconButtonPay_Click(object sender, EventArgs e)
         {
+            if (orders == null || !orders.Any())
+            {
+                MessageBox.Show("There no order yet!");
+                return;
+            }
+            // Assuming `Invoice` has an auto-increment ID
+            //var invoices = pos_context.Invoices.Select(x=>x.Id).ToList();
+            //int newInvoiceId = invoices.Count(); // Retrieve the latest ID and increment
+            string invoiceNo = 1.ToString("D10"); // Format with leading zeros to 10 digits
+
+            DialogResult returnMsg = MessageBox.Show("Are you sure to proceed?","Transaction",MessageBoxButtons.YesNo);
+            // Submit changes to the database
+            if (returnMsg == DialogResult.Yes)
+            { 
+
+                Invoice invoice = new Invoice()
+                {
+                    Guid = Guid.NewGuid(),
+                    InvoiceNo = invoiceNo,
+                    Total = (decimal)_total,
+                    Status = 0,
+                };
+                pos_context.Invoices.InsertOnSubmit(invoice);
+                pos_context.SubmitChanges();
+            }
 
         }
 
