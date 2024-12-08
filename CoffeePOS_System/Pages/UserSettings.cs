@@ -16,5 +16,10 @@ namespace CoffeePOS_System.Pages
         {
             InitializeComponent();
         }
+
+        private void UserSettings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -360,41 +360,46 @@ namespace CoffeePOS_System
 
         private void iconButtonPay_Click(object sender, EventArgs e)
         {
-            if (orders == null || !orders.Any())
-            {
-                MessageBox.Show("There no order yet!");
-                return;
-            }
-            // Assuming `Invoice` has an auto-increment ID
-            //var invoices = pos_context.Invoices.Select(x=>x.Id).ToList();
-            //int newInvoiceId = invoices.Count(); // Retrieve the latest ID and increment
-            string invoiceNo = 1.ToString("D10"); // Format with leading zeros to 10 digits
-
-            DialogResult returnMsg = MessageBox.Show("Are you sure to proceed?","Transaction",MessageBoxButtons.YesNo);
-            // Submit changes to the database
-            if (returnMsg == DialogResult.Yes)
+            try
             { 
-
-                Invoice invoice = new Invoice()
+                if (orders == null || !orders.Any())
                 {
-                    Guid = Guid.NewGuid(),
-                    InvoiceNo = invoiceNo,
-                    Total = (decimal)_total,
-                    Status = 0,
-                };
-                pos_context.Invoices.InsertOnSubmit(invoice);
-                pos_context.SubmitChanges();
-            }
+                    MessageBox.Show("There no order yet!");
+                    return;
+                }
+                // Assuming `Invoice` has an auto-increment ID
+                //var invoices = pos_context.Invoices.Select(x=>x.Id).ToList();
+                //int newInvoiceId = invoices.Count(); // Retrieve the latest ID and increment 
 
+                DialogResult returnMsg = MessageBox.Show("Are you sure to proceed?", "Transaction", MessageBoxButtons.YesNo);
+                // Submit changes to the database
+                if (returnMsg == DialogResult.Yes)
+                { 
+                   var resutlDia = new InvoiceForm(orders,_total).ShowDialog(); 
+                    if(resutlDia == DialogResult.Cancel)
+                    {
+                        ResetOrder(true);  
+                    }
+                } 
+                MessageBox.Show("Transaction Completed.", "Transaction");
+                orders.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Transaction failed due to : {ex.Message}","Transaction Error");
+            }
+          
+
+            GetProductByCate(cateGuid);
+
+            UpdateOrderListUI();
         }
 
         private void iconButtonCancel_Click(object sender, EventArgs e)
         {
             ResetOrder(true);
-            //Reset Product Qty
-             
-             GetProductByCate(cateGuid);
-            
+            //Reset Product Qty 
+            GetProductByCate(cateGuid); 
             UpdateOrderListUI();
         }
     }

@@ -15,12 +15,9 @@ namespace CoffeePOS_System.Pages
 {
     public partial class DrinkSettings : Form
     {
-        Coffee_POSDataContext pos_context = new Coffee_POSDataContext();
-        List<Product> products = new List<Product>();
-        List<Order> productCards = new List<Order>();
-        List<Order> orders = new List<Order>();
+        Coffee_POSDataContext pos_context = new Coffee_POSDataContext(); 
         List<Category> categories = new List<Category>();
-  
+        Guid selectedItem = Guid.Empty;
         public DrinkSettings()
         {
             InitializeComponent();
@@ -94,8 +91,7 @@ namespace CoffeePOS_System.Pages
             {
                 dataGridView_Product.DataSource = null;
             }
-            RenderTable();
-            // Optionally, you may want to refresh the DataGridView or handle no results
+            RenderTable(); 
         }
 
         private void labelImage_Click(object sender, EventArgs e)
@@ -214,6 +210,7 @@ namespace CoffeePOS_System.Pages
                     CateGuid = row.Cells["CategoryGuid"].Value,
                     ImagePath = row.Cells["ImagePath"].Value,
                 };
+                selectedItem = (Guid)dataObject.Guid;
                 label_id.Text = dataObject.ID.ToString();
                 textBox_Name.Text = dataObject.Name.ToString();
                 textBox_stock.Text = dataObject.Stock.ToString();
@@ -346,6 +343,45 @@ namespace CoffeePOS_System.Pages
                 MessageBox.Show($"Error loading image: {ex.Message}");
                 pictureBox.Image = null; // Clear the image if there's an error
                 labelImage.Visible = true;
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var confirmation = MessageBox.Show("Are you sure to delete this item?","Delete Confirmation",MessageBoxButtons.YesNo);
+            if(confirmation == DialogResult.No)
+            {
+                MessageBox.Show("Delete Cancelled!");
+                return;
+            }
+
+            try
+            {
+                // Check if the product already exists based on a unique identifier (e.g., Name or Guid)
+                var existingProduct = pos_context.Products.FirstOrDefault(p => p.Guid == selectedItem);
+ 
+                // Insert new product
+                pos_context.Products.DeleteOnSubmit(existingProduct);
+
+                // Submit changes to the database
+                pos_context.SubmitChanges();
+
+                // Refresh the DataGridView
+                dataGridView_Product.DataSource = pos_context.Products;
+
+                // Clear input fields
+                ClearAllInput();
+
+                MessageBox.Show("Delete Successfully!");
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (e.g., log the error)
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+            finally
+            {
+                // Any cleanup code if necessary
             }
         }
     }

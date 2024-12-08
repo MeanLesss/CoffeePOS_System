@@ -30,7 +30,6 @@
         {
             this.iconButtonDrink = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButtonFood = new FontAwesome.Sharp.IconButton();
             this.iconButtonCate = new FontAwesome.Sharp.IconButton();
             this.iconButtonUser = new FontAwesome.Sharp.IconButton();
             this.iconButtonLogOut = new FontAwesome.Sharp.IconButton();
@@ -47,7 +46,7 @@
             this.iconButtonDrink.Name = "iconButtonDrink";
             this.iconButtonDrink.Size = new System.Drawing.Size(242, 48);
             this.iconButtonDrink.TabIndex = 0;
-            this.iconButtonDrink.Text = "Drinks";
+            this.iconButtonDrink.Text = "Products";
             this.iconButtonDrink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonDrink.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonDrink.UseVisualStyleBackColor = true;
@@ -63,29 +62,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Settings";
             // 
-            // iconButtonFood
-            // 
-            this.iconButtonFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonFood.IconChar = FontAwesome.Sharp.IconChar.BowlFood;
-            this.iconButtonFood.IconColor = System.Drawing.Color.Black;
-            this.iconButtonFood.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonFood.Location = new System.Drawing.Point(69, 131);
-            this.iconButtonFood.Name = "iconButtonFood";
-            this.iconButtonFood.Size = new System.Drawing.Size(242, 48);
-            this.iconButtonFood.TabIndex = 0;
-            this.iconButtonFood.Text = "Foods";
-            this.iconButtonFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonFood.UseVisualStyleBackColor = true;
-            this.iconButtonFood.Click += new System.EventHandler(this.iconButtonFood_Click);
-            // 
             // iconButtonCate
             // 
             this.iconButtonCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonCate.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
             this.iconButtonCate.IconColor = System.Drawing.Color.Black;
             this.iconButtonCate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonCate.Location = new System.Drawing.Point(69, 185);
+            this.iconButtonCate.Location = new System.Drawing.Point(69, 131);
             this.iconButtonCate.Name = "iconButtonCate";
             this.iconButtonCate.Size = new System.Drawing.Size(242, 48);
             this.iconButtonCate.TabIndex = 0;
@@ -101,7 +84,7 @@
             this.iconButtonUser.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             this.iconButtonUser.IconColor = System.Drawing.Color.Black;
             this.iconButtonUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonUser.Location = new System.Drawing.Point(69, 239);
+            this.iconButtonUser.Location = new System.Drawing.Point(69, 185);
             this.iconButtonUser.Name = "iconButtonUser";
             this.iconButtonUser.Size = new System.Drawing.Size(242, 48);
             this.iconButtonUser.TabIndex = 0;
@@ -117,7 +100,7 @@
             this.iconButtonLogOut.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.iconButtonLogOut.IconColor = System.Drawing.Color.Black;
             this.iconButtonLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLogOut.Location = new System.Drawing.Point(69, 293);
+            this.iconButtonLogOut.Location = new System.Drawing.Point(69, 239);
             this.iconButtonLogOut.Name = "iconButtonLogOut";
             this.iconButtonLogOut.Size = new System.Drawing.Size(242, 48);
             this.iconButtonLogOut.TabIndex = 0;
@@ -133,7 +116,7 @@
             this.iconButtonLogoutExit.IconChar = FontAwesome.Sharp.IconChar.Explosion;
             this.iconButtonLogoutExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.iconButtonLogoutExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLogoutExit.Location = new System.Drawing.Point(69, 347);
+            this.iconButtonLogoutExit.Location = new System.Drawing.Point(69, 293);
             this.iconButtonLogoutExit.Name = "iconButtonLogoutExit";
             this.iconButtonLogoutExit.Size = new System.Drawing.Size(242, 48);
             this.iconButtonLogoutExit.TabIndex = 0;
@@ -147,13 +130,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 450);
+            this.ClientSize = new System.Drawing.Size(388, 383);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButtonLogoutExit);
             this.Controls.Add(this.iconButtonLogOut);
             this.Controls.Add(this.iconButtonUser);
             this.Controls.Add(this.iconButtonCate);
-            this.Controls.Add(this.iconButtonFood);
             this.Controls.Add(this.iconButtonDrink);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PopUpMenu";
@@ -168,7 +150,6 @@
 
         private FontAwesome.Sharp.IconButton iconButtonDrink;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButtonFood;
         private FontAwesome.Sharp.IconButton iconButtonCate;
         private FontAwesome.Sharp.IconButton iconButtonUser;
         private FontAwesome.Sharp.IconButton iconButtonLogOut;

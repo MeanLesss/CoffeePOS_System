@@ -87,6 +87,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Coffee_POS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ENUM\RoleEnum.cs" />
     <Compile Include="GlobalCustomizeFuction.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -117,6 +118,12 @@
     </Compile>
     <Compile Include="Pages\FoodSetting.Designer.cs">
       <DependentUpon>FoodSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\InvoiceForm.Designer.cs">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginForm.cs">
       <SubType>Form</SubType>
@@ -162,11 +169,17 @@
     <EmbeddedResource Include="Pages\FoodSetting.resx">
       <DependentUpon>FoodSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\InvoiceForm.resx">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PopUpMenu.resx">
       <DependentUpon>PopUpMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +235,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AppAssets\login-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppAssets\qr.jpg" />
+    <Content Include="SavedImages\Bay Cha\780263cd-5bf3-4773-b382-6fc78f7cff6b.png" />
+    <Content Include="SavedImages\Bay Cha\8b0256be-ff5d-4a66-83b0-81ef955239bb.jpg" />
+    <Content Include="SavedImages\Coca Cola\5c2ffba5-9c95-45af-a58b-cfadd7b4eb5c.jpg" />
+    <Content Include="SavedImages\Coca Cola\ca41a27b-a8ef-42a0-b89f-66a1283b31e3.png" />
+    <Content Include="SavedImages\Coca Cola\f5d86f34-582d-4680-89f3-2416ed7ab665.png" />
+    <Content Include="SavedImages\Sach Ang\2e310648-08b6-443f-848c-c396ce2ef17a.jpg" />
+    <Content Include="SavedImages\Sach Ang\31126576-90be-4128-81e6-bca41924b84a.jpg" />
+    <Content Include="SavedImages\Sprite\abfa5d88-5c71-4ba1-b2b5-d4b347a0150c.png" />
+    <Content Include="SavedImages\Sprite\f683531a-6c5c-40e6-9083-e33568c4cb9a.png" />
+    <Content Include="SavedImages\Squid\bdc8fe4f-ae2a-4c1f-ac1d-124d715ed325.jpg" />
+    <None Include="Resources\qr.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

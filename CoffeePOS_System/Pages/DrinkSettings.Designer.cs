@@ -267,6 +267,7 @@
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Visible = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBox2
             // 
@@ -413,6 +414,7 @@
             this.Name = "DrinkSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Drink Settings";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.DrinkSettings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Product)).EndInit();
             this.groupBox1.ResumeLayout(false);

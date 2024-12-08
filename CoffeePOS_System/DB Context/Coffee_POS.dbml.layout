@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Coffee_POS">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="Coffee_POS">
   <DataContextMoniker Name="/Coffee_POSDataContext" />
   <nestedChildShapes>
     <classShape Id="2ad5c9c5-801e-4133-bd49-0df90abc936d" absoluteBounds="0.75, 2, 2, 1.5785953776041666">
@@ -33,17 +33,17 @@
         <classShapeMoniker Id="bd85c4ce-6509-4acd-8da4-fd34477db899" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.78929768880208); (3.5 : 2.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.78929768880208); (3.5 : 2.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/Coffee_POSDataContext/Category/Category_Product" />
       <nodes>
         <classShapeMoniker Id="2ad5c9c5-801e-4133-bd49-0df90abc936d" />
         <classShapeMoniker Id="cee31706-a4a0-4b05-87f5-07fbc3996785" />
       </nodes>
     </associationConnector>
-    <classShape Id="db12417c-7cc3-4b15-ad51-0e413981b243" absoluteBounds="5.375, 5.25, 2, 2.7324039713541666">
+    <classShape Id="b9a5098b-d9e5-4173-9742-6eb29f274700" absoluteBounds="4.875, 5.75, 2, 2.7324039713541666">
       <DataClassMoniker Name="/Coffee_POSDataContext/Invoice" />
       <nestedChildShapes>
-        <elementListCompartment Id="53fa7ada-a33d-4d23-9a88-f9c485d1ea9a" absoluteBounds="5.39, 5.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="31442532-f6d0-42d4-839b-75391905bf15" absoluteBounds="4.89, 6.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -151,7 +151,7 @@ namespace CoffeePOS_System.DB_Context
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL", IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -1323,7 +1323,7 @@ namespace CoffeePOS_System.DB_Context
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Guid", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Guid", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
 		public System.Guid Guid
 		{
 			get
