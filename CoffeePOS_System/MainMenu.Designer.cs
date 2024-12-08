@@ -31,10 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.panel_top = new System.Windows.Forms.Panel();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.iconButtonSettingMenu = new FontAwesome.Sharp.IconButton();
-            this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_time = new System.Windows.Forms.ToolStripStatusLabel();
             this.flowLayoutPanel_item = new System.Windows.Forms.FlowLayoutPanel();
@@ -55,19 +53,25 @@
             this.iconDropDownButton1 = new FontAwesome.Sharp.IconDropDownButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.label_username = new System.Windows.Forms.Label();
+            this.label_usercode = new System.Windows.Forms.Label();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTotal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_top
             // 
             this.panel_top.BackColor = System.Drawing.Color.FloralWhite;
             this.panel_top.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_top.Controls.Add(this.label_usercode);
+            this.panel_top.Controls.Add(this.label_username);
             this.panel_top.Controls.Add(this.comboBoxCategory);
             this.panel_top.Controls.Add(this.label3);
             this.panel_top.Controls.Add(this.iconButtonSettingMenu);
@@ -88,10 +92,6 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(268, 32);
             this.comboBoxCategory.TabIndex = 5;
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(CoffeePOS_System.DB_Context.Category);
             // 
             // label3
             // 
@@ -121,10 +121,6 @@
             this.iconButtonSettingMenu.Click += new System.EventHandler(this.iconButtonSettingMenu_Click);
             this.iconButtonSettingMenu.MouseLeave += new System.EventHandler(this.iconButtonSettingMenu_MouseLeave);
             this.iconButtonSettingMenu.MouseHover += new System.EventHandler(this.iconButtonSettingMenu_MouseHover);
-            // 
-            // categoryBindingSource1
-            // 
-            this.categoryBindingSource1.DataSource = typeof(CoffeePOS_System.DB_Context.Category);
             // 
             // statusStrip1
             // 
@@ -346,6 +342,37 @@
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
+            // label_username
+            // 
+            this.label_username.AutoSize = true;
+            this.label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_username.Location = new System.Drawing.Point(1615, 8);
+            this.label_username.Name = "label_username";
+            this.label_username.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label_username.Size = new System.Drawing.Size(110, 25);
+            this.label_username.TabIndex = 6;
+            this.label_username.Text = "Username";
+            this.label_username.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_usercode
+            // 
+            this.label_usercode.AutoSize = true;
+            this.label_usercode.Location = new System.Drawing.Point(1620, 41);
+            this.label_usercode.Name = "label_usercode";
+            this.label_usercode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label_usercode.Size = new System.Drawing.Size(35, 13);
+            this.label_usercode.TabIndex = 7;
+            this.label_usercode.Text = "label7";
+            this.label_usercode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(CoffeePOS_System.DB_Context.Category);
+            // 
+            // categoryBindingSource1
+            // 
+            this.categoryBindingSource1.DataSource = typeof(CoffeePOS_System.DB_Context.Category);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,8 +392,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -374,6 +399,8 @@
             this.panel2.PerformLayout();
             this.panelTotal.ResumeLayout(false);
             this.panelTotal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,6 +434,8 @@
         private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconButton iconButtonCancel;
         private FontAwesome.Sharp.IconButton iconButtonPay;
+        private System.Windows.Forms.Label label_username;
+        private System.Windows.Forms.Label label_usercode;
     }
 }
 

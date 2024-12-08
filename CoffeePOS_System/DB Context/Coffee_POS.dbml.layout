@@ -8,12 +8,6 @@
         <elementListCompartment Id="e3b6753d-dd60-4754-84a7-cb9a6bb82dbd" absoluteBounds="0.765, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="197c6c89-62c6-48b2-aa4e-dd47998fbc9f" absoluteBounds="0.875, 4.625, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/Coffee_POSDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="471dd5c9-f2b3-4abe-b748-a2dad2e92150" absoluteBounds="0.89, 5.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="bd85c4ce-6509-4acd-8da4-fd34477db899" absoluteBounds="6.25, 1, 2, 3.8862125651041666">
       <DataClassMoniker Name="/Coffee_POSDataContext/Order" />
       <nestedChildShapes>
@@ -33,7 +27,7 @@
         <classShapeMoniker Id="bd85c4ce-6509-4acd-8da4-fd34477db899" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.78929768880208); (3.5 : 2.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.78929768880208); (3.5 : 2.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Coffee_POSDataContext/Category/Category_Product" />
       <nodes>
         <classShapeMoniker Id="2ad5c9c5-801e-4133-bd49-0df90abc936d" />
@@ -44,6 +38,12 @@
       <DataClassMoniker Name="/Coffee_POSDataContext/Invoice" />
       <nestedChildShapes>
         <elementListCompartment Id="31442532-f6d0-42d4-839b-75391905bf15" absoluteBounds="4.89, 6.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a490fa5-d2b5-4dce-8179-0850261ff10c" absoluteBounds="1.5, 5.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/Coffee_POSDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a22997a5-f76b-4532-a919-f29779ad2d1a" absoluteBounds="1.5150000000000001, 6.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

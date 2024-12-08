@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq; 
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Windows.Media.Animation;
 
 namespace CoffeePOS_System
@@ -42,6 +43,8 @@ namespace CoffeePOS_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            label_username.Text = Properties.Settings.Default.username;
+            label_usercode.Text = Properties.Settings.Default.usercode;
             timer1.Start();
             PopulateCate();
           
@@ -233,7 +236,7 @@ namespace CoffeePOS_System
 
         private void iconButtonSettingMenu_Click(object sender, EventArgs e)
         {
-                var menu = new PopUpMenu();
+                var menu = new PopUpMenu(this);
                 DialogResult result = menu.ShowDialog();
            
         }

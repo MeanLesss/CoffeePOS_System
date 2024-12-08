@@ -12,9 +12,11 @@ namespace CoffeePOS_System.Pages
 {
     public partial class PopUpMenu : Form
     {
-        public PopUpMenu()
+        MainMenu _mainMenu;
+        public PopUpMenu(MainMenu mainMenu)
         {
             InitializeComponent();
+            _mainMenu = mainMenu;
         }
 
         private void iconButtonDrink_Click(object sender, EventArgs e)
@@ -43,12 +45,24 @@ namespace CoffeePOS_System.Pages
 
         private void iconButtonLogOut_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.usercode = string.Empty;
+            Properties.Settings.Default.username = string.Empty;
+            Properties.Settings.Default.isLogout = true;
+            Properties.Settings.Default.Save();
+            _mainMenu.Hide();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             this.Close();
-            new LoginForm().ShowDialog(); 
+            new LoginForm().Show(); 
         }
 
         private void iconButtonLogoutExit_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.usercode = string.Empty;
+            Properties.Settings.Default.username = string.Empty;
+            Properties.Settings.Default.isLogout = true;
+            Properties.Settings.Default.Save();
+            _mainMenu.Close();
             Application.Exit();
         }
     }
