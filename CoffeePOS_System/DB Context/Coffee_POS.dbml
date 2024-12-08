@@ -27,6 +27,7 @@
       <Column Name="OrderByCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="InvoiceNo" Type="System.String" CanBeNull="false" />
       <Column Name="InvoiceGuid" Type="System.Guid" CanBeNull="false" />
+      <Column Member="ProductName" Type="System.String" CanBeNull="false" />
       <Association Name="Product_Order" Member="Product" ThisKey="ProductGuid" OtherKey="Guid" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>

@@ -318,6 +318,8 @@ namespace CoffeePOS_System.DB_Context
 		
 		private System.Guid _InvoiceGuid;
 		
+		private string _ProductName;
+		
 		private EntityRef<Product> _Product;
 		
     #region Extensibility Method Definitions
@@ -356,6 +358,8 @@ namespace CoffeePOS_System.DB_Context
     partial void OnInvoiceNoChanged();
     partial void OnInvoiceGuidChanging(System.Guid value);
     partial void OnInvoiceGuidChanged();
+    partial void OnProductNameChanging(string value);
+    partial void OnProductNameChanged();
     #endregion
 		
 		public Order()
@@ -684,6 +688,26 @@ namespace CoffeePOS_System.DB_Context
 					this._InvoiceGuid = value;
 					this.SendPropertyChanged("InvoiceGuid");
 					this.OnInvoiceGuidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", CanBeNull=false)]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this.OnProductNameChanging(value);
+					this.SendPropertyChanging();
+					this._ProductName = value;
+					this.SendPropertyChanged("ProductName");
+					this.OnProductNameChanged();
 				}
 			}
 		}

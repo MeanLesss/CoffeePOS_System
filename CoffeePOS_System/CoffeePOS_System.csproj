@@ -113,11 +113,11 @@
     <Compile Include="Pages\DrinkSettings.Designer.cs">
       <DependentUpon>DrinkSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FoodSetting.cs">
+    <Compile Include="Pages\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\FoodSetting.Designer.cs">
-      <DependentUpon>FoodSetting.cs</DependentUpon>
+    <Compile Include="Pages\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\InvoiceForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +136,12 @@
     </Compile>
     <Compile Include="Pages\PopUpMenu.Designer.cs">
       <DependentUpon>PopUpMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SubReportForm.Designer.cs">
+      <DependentUpon>SubReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserSettings.cs">
       <SubType>Form</SubType>
@@ -166,8 +172,8 @@
     <EmbeddedResource Include="Pages\DrinkSettings.resx">
       <DependentUpon>DrinkSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\FoodSetting.resx">
-      <DependentUpon>FoodSetting.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\InvoiceForm.resx">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PopUpMenu.resx">
       <DependentUpon>PopUpMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SubReportForm.resx">
+      <DependentUpon>SubReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>

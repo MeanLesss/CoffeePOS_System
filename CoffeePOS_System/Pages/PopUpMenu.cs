@@ -28,7 +28,7 @@ namespace CoffeePOS_System.Pages
         private void iconButtonFood_Click(object sender, EventArgs e)
         {
             this.Close();
-            new FoodSetting().Show();
+            new ReportForm().Show();
         }
 
         private void iconButtonCate_Click(object sender, EventArgs e)
@@ -64,6 +64,13 @@ namespace CoffeePOS_System.Pages
             Properties.Settings.Default.Save();
             _mainMenu.Close();
             Application.Exit();
+        }
+
+        private void iconButtonReport_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new ReportForm().Show();
+
         }
     }
 }

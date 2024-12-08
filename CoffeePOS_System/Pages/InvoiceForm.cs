@@ -137,6 +137,8 @@ namespace CoffeePOS_System.Pages
                         newOrder.Guid = Guid.NewGuid();
                         newOrder.OrderDate = DateTime.Now;
                         newOrder.ProductGuid = order.ProductGuid;
+                        newOrder.ProductName = order.Product.Name;
+                        newOrder.Price = order.Product.Price;
                         newOrder.Status = (byte)1;
                         newOrder.OrderBy = Properties.Settings.Default.username;
                         newOrder.OrderByCode = Properties.Settings.Default.usercode;

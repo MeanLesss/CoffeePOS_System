@@ -34,6 +34,7 @@
             this.iconButtonUser = new FontAwesome.Sharp.IconButton();
             this.iconButtonLogOut = new FontAwesome.Sharp.IconButton();
             this.iconButtonLogoutExit = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // iconButtonDrink
@@ -100,7 +101,7 @@
             this.iconButtonLogOut.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.iconButtonLogOut.IconColor = System.Drawing.Color.Black;
             this.iconButtonLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLogOut.Location = new System.Drawing.Point(69, 239);
+            this.iconButtonLogOut.Location = new System.Drawing.Point(69, 293);
             this.iconButtonLogOut.Name = "iconButtonLogOut";
             this.iconButtonLogOut.Size = new System.Drawing.Size(242, 48);
             this.iconButtonLogOut.TabIndex = 0;
@@ -116,7 +117,7 @@
             this.iconButtonLogoutExit.IconChar = FontAwesome.Sharp.IconChar.Explosion;
             this.iconButtonLogoutExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.iconButtonLogoutExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLogoutExit.Location = new System.Drawing.Point(69, 293);
+            this.iconButtonLogoutExit.Location = new System.Drawing.Point(69, 347);
             this.iconButtonLogoutExit.Name = "iconButtonLogoutExit";
             this.iconButtonLogoutExit.Size = new System.Drawing.Size(242, 48);
             this.iconButtonLogoutExit.TabIndex = 0;
@@ -126,14 +127,31 @@
             this.iconButtonLogoutExit.UseVisualStyleBackColor = true;
             this.iconButtonLogoutExit.Click += new System.EventHandler(this.iconButtonLogoutExit_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ListNumeric;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(69, 239);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(242, 48);
+            this.iconButton1.TabIndex = 0;
+            this.iconButton1.Text = "Sale Report";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButtonReport_Click);
+            // 
             // PopUpMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 383);
+            this.ClientSize = new System.Drawing.Size(388, 447);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButtonLogoutExit);
             this.Controls.Add(this.iconButtonLogOut);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconButtonUser);
             this.Controls.Add(this.iconButtonCate);
             this.Controls.Add(this.iconButtonDrink);
@@ -154,5 +172,6 @@
         private FontAwesome.Sharp.IconButton iconButtonUser;
         private FontAwesome.Sharp.IconButton iconButtonLogOut;
         private FontAwesome.Sharp.IconButton iconButtonLogoutExit;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
