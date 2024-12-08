@@ -247,6 +247,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AppAssets\qr.jpg" />
+    <Content Include="DB Context\database_template.sql" />
     <Content Include="SavedImages\Bay Cha\780263cd-5bf3-4773-b382-6fc78f7cff6b.png" />
     <Content Include="SavedImages\Bay Cha\8b0256be-ff5d-4a66-83b0-81ef955239bb.jpg" />
     <Content Include="SavedImages\Coca Cola\5c2ffba5-9c95-45af-a58b-cfadd7b4eb5c.jpg" />
